@@ -16,3 +16,5 @@ class ProductPage(BasePage):
         price_basket = self.browser.find_element(*ProductPageLocators.PRICE_BASKET).text
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         assert price_basket ==  product_price, "Don't have price in basket"
+
+
