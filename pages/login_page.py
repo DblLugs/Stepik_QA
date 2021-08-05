@@ -1,6 +1,5 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
-from .locators import ProductPageLocators
 
 
 class LoginPage(BasePage):
@@ -20,9 +19,7 @@ class LoginPage(BasePage):
         assert self.browser.find_element(*LoginPageLocators.REGISTER_FORM), "There is not register form"
 
     def register_new_user(self, email, password):
-        self.email = email
-        self.password = password
-        register_email = self.browser.find_element(*ProductPageLocators.REGISTRATION_EMAIL).send_keys(email)
-        register_password_1 = self.browser.find_element(*ProductPageLocators.REGISTRATION_PASSWORD_1).send_keys(password)
-        register_password_2 = self.browser.find_element(*ProductPageLocators.REGISTRATION_PASSWORD_2).send_keys(password)
-        registration_submit = self.browser.find_element(*ProductPageLocators.REGISTRATION_SUBMIT).click()
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_EMAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD_1).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD_2).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_SUBMIT).click()
