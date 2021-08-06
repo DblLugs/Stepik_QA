@@ -9,4 +9,4 @@ source venv/bin/activate
 3) Перед запуском тестов установите пакеты: 
 pip install -r requirements.txt
 
-Если возникает ошибка ImportError: attempted relative import with no known parent package, просто удалите точки перед пакетами в тесте. То есть было "from .pages.basket_page import BasketPage", должно стать "from pages.basket_page import BasketPage".
+Если возникает ошибка ImportError: attempted relative import with no known parent package, просто удалите точки перед пакетами в файлах с тестами. То есть было "from .pages.basket_page import BasketPage", должно стать "from pages.basket_page import BasketPage".
